@@ -11,6 +11,29 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
     <script>
+        // Immediately Invoked Function Expression (IIFE)
+        (function(){
+            function writeData(favourites){
+                let options = ['<option value=""></option>']
+                const select = document.getElementById('select')
+                for(let i = 0;i<favourites.length;i++){
+                    options.push(`<option value="${favourites[i]["name"]}">${favourites[i]["name"]}</option>`)
+                }
+                select.innerHTML = options
+
+
+            }
+
+            async function getData(url) {
+                return await fetch(url)
+                .then(response => response.json())
+            }
+
+            getData('https://api.apispreadsheets.com/data/10618/')
+            .then(data => writeData(data.data))
+            
+        })()
+
         function SubForm (){
             const data = $("#myForm").serializeArray();
             console.log("SubForm", data);
@@ -61,106 +84,11 @@
     <button onclick="SubForm()">Submit</button>
     <h3>Login</h3>
     <form>
-        <select name="select" id="select">
-        </select>
+        <select name="select" id="select"></select>
     </form>
     <h3>You are awesome</h3>
     <p id="info"></p>
     <img> </img>
-        <script>   
-            const favourites = [
-                {
-                    name:""
-                },
-                {
-                    name: 'Samuel',
-                    food:'Tacos',
-                    hobby:'Programing',
-                    animal: 'a Dog',
-                    game:"______",
-                    image: "/images/samuel.jpg"
-                },
-                {
-                    name: 'Daddio',
-                    food:'Rocotto relleno',
-                    hobby:'Programing',
-                    animal: 'a Snow Dog',
-                    game:"______",
-                    image: "/images/daddio.jpg"
-                },
-                {
-                    name: 'Mummy',
-                    food:'Pizza',
-                    hobby:'Playing games',
-                    animal: 'a Elephant',
-                    game:"______",
-                    image: "/images/christine.jpg"
-                },
-                {
-                    name:'Amelia',
-                    food:'Butter chicken',
-                    hobby:'Reading',
-                    animal:'a Dolphin',
-                    game:"______",
-                    image:"/images/amelia.jpg"
-                },
-                {
-                    name:'Annabelle',
-                    food:'Pizza',
-                    hobby:'Gymnastics',
-                    animal:'a Dog',
-                    game:"______",
-                    image:"/images/annabelle.jpg"
-                },
-                ]
-
-            document.getElementById("select").addEventListener("change", changeEvent);
-            
-            function createSelectField(){
-                const select = document.getElementById('select')
-
-                const names = favourites.map(item => `<option value="${item.name}">${item.name}</option>`)
-                select.innerHTML = names
-            }
-            let color = "orange"
-            createSelectField()
-            function changeEvent(e) {
-                let userName = this.value
-
-                const usernameElement = document.getElementById('username')
-                usernameElement.innerHTML = userName
-
-                const info = document.getElementById('info')
-                info.innerHTML = '';
-
-               
-                const selectedPerson = favourites.filter(function (item){
-                    return item.name === userName
-                })
-                let favouriteThings = ''
-                    for (keyName in selectedPerson[0]) {
-                        value = selectedPerson[0][keyName]
-                        if(keyName === "best friend"){
-                            favouriteThings += "<li>Your " + keyName + " is " + value + ".</li>"
-                        }
-                        else if(keyName === "name"){
-
-                        }
-                        else if(keyName ==="image"){
-                            favouriteThings += '<br><img src="' + value + '" alt="' + selectedPerson[0].name + '" width=300/>'
-                        }
-                        else{
-                            favouriteThings += "<li >Your favourite " + keyName + " is " + value + "</li>"
-                        }
-
-                }
-
-
-                info.innerHTML = '<ul>' + favouriteThings + '</ul>'
-
-                e.preventDefault();
-            }
-        // document.getElementById('button-save').addEventListener("click", clickFunction);
-    </script>
+       
 </body>
 </html>
