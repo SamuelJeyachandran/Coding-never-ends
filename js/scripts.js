@@ -45,7 +45,7 @@ function addInformation(name) {
     if (keyname[type] === "image") {
       listfavourites += `<br><img src="${
         info.filter((item) => item.name === name)[0]["image"]
-      }" width=300/>`;
+      }" width=300 alt-"${name}"/>`;
     } else {
       listfavourites += `<li>Your favourite ${keyname[type]} is ${
         info.filter((item) => item.name === name)[0][keyname[type]]
