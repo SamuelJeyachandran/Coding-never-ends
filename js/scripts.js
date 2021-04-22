@@ -3,13 +3,10 @@ let info = [];
         (function(){
             function writeData(favourites){
                 let options = ['<option value=""></option>']
-                info = favourites
+                info = favourites;
                 const select = document.getElementById('select')
                 for(let i = 0;i<favourites.length;i++){
                     options.push(`<option value="${favourites[i]["name"]}">${favourites[i]["name"]}</option>`)
-                    if(favourites[i]["name"] === "Samuel"){
-                        console.log("Hey daddy i want to print the information to the page of the person")
-                    }
                 }
                 select.innerHTML = options
 
@@ -41,10 +38,15 @@ let info = [];
             });
         }
         function addInformation(name){
-            console.log(name)
-            console.log("Your favourite food is " + info.filter(item => item.name === name)[0]["food"])
-            console.log("Your favourite hobby is " + info.filter(item => item.name === name)[0]["hobby"])
-            console.log("Your favourite animal is " + info.filter(item => item.name === name)[0]["animal"])
-            console.log("Your favourite game is " + info.filter(item => item.name === name)[0]["game"])
-            console.log("Your image is " + info.filter(item => item.name === name)[0]["image"])
+            let listfavourites = ''
+            for(let type = 0;type<5;type++){
+                let keyname = ["food","hobby","animal","game","image"]
+                if(keyname[type] === "image"){
+                    listfavourites += `<br><img src="${info.filter(item => item.name === name)[0]["image"]}" width=300/>`
+                }
+                else{
+                    listfavourites += `<li>Your favourite ${keyname[type]} is ${info.filter(item => item.name === name)[0][keyname[type]]}</li>`
+                }
+            }
+                document.getElementById('list').innerHTML = '<ul>' + listfavourites + '</ul>'
         }
