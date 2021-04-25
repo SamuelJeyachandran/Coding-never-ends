@@ -51,6 +51,9 @@ function addInformation(name) {
         info.filter((item) => item.name === name)[0][keyname[type]]
       }</li>`;
     }
+    document.getElementById("username").innerHTML = info.filter(
+      (item) => item.name === name
+    )[0]["name"];
   }
   document.getElementById("list").innerHTML = "<ul>" + listfavourites + "</ul>";
 }

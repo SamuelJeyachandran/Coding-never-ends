@@ -10,6 +10,24 @@
         src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
+    <style>
+        h1{
+            color:darkgreen;
+        }
+        h3 {
+            color:green;
+        }
+        input {
+            color:darkslategray;
+            background-color: lightgray;
+        }
+        label {
+            color:dimgray;
+        }
+        select {
+            color:darkblue;
+        }
+    </style>
 </head>
 <body>
 
@@ -44,7 +62,7 @@
     <button onclick="SubForm()">Submit</button>
     <h3>Select your name</h3>
     <form>
-        <select name="select" id="select" onclick="addInformation(this.value)"></select>
+        <select name="select" id="select" onchange="addInformation(this.value)"></select>
     </form>
     <h3>You are awesome</h3>
     <p id="list"><p>
