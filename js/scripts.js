@@ -24,7 +24,6 @@ let info = [];
 
 function SubForm() {
   const data = $("#myForm").serializeArray();
-  console.log("SubForm", data);
   $.ajax({
     url: "https://api.apispreadsheets.com/data/10618/",
     type: "post",
