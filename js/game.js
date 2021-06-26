@@ -3,7 +3,7 @@
     console.log(num)
     function checkNum(event){
     
-        const inputField = document.getElementById('input')
+        const inputField = document.getElementById('inputnum')
         const input = parseInt(inputField.value)
         console.log(input)
         if(input === num){
