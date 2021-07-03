@@ -16,6 +16,11 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
     <style>
+
+        .container {
+            margin-left: unset;
+        }
+
         h1{
             color:darkgreen;
         }
@@ -36,9 +41,13 @@
         }
     </style>
 </head>
-<body> 
-    <div id="webpage">
+<body>
+    <div id="webpage" class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="favicon.ico" alt="" width="30" height="30" class="d-inline-block align-text-top"> favourite</a>
+                </div>
             <div class="container-fluid">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,8 +55,8 @@
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="/favourite/">Home</a>
-                    <a class="nav-link" href="/favourite/add">Add yourself</a>
                     <a class="nav-link" href="/favourite/special">Special</a>
+                    <a class="nav-link" href="/favourite/signup">Sign up</a>
                 </div>
               </div>
             </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Information | favourite</title>
+    <title>Sign up | favourite</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,6 +16,9 @@
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
     <style>
+      .container {
+        margin-left: unset;
+      }
       h1 {
         color: darkgreen;
       }
@@ -25,7 +28,12 @@
     </style>
   </head>
   <body>
+    <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/favicon.ico" alt="" width="30" height="30" class="d-inline-block align-text-top"> favourite</a>
+      </div>
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -33,14 +41,14 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
               <a class="nav-link" href="/favourite/">Home</a>
-              <a class="nav-link active" aria-current="page" href="/favourite/add">Add yourself</a>
               <a class="nav-link" href="/favourite/special">Special</a>
+              <a class="nav-link active" aria-current="page" href="/favourite/signup">Sign up</a>
           </div>
         </div>
       </div>
     </nav>
-    <h1>Add Information</h1>
-    <h3>Add yourself to the webpage by putting your favourite things</h3>
+    <h1>Sign up</h1>
+    <h3>Sign up by putting your favourite things in</h3>
     <br>
     <div>
     <form id="myForm">
@@ -71,7 +79,8 @@
         <br>
     </form>
     <button onclick="SubForm()">Submit</button>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="/favourite/js/add.js"></script>
+    <script src="/favourite/js/signup.js"></script>
   </body>
 </html>
