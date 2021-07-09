@@ -1,9 +1,9 @@
+const lStorage = window.localStorage;
 function logIn(){
   const nameField = document.getElementById('name')
   const name = nameField.value
   const pswField = document.getElementById('psw')
   const psw = pswField.value
-
   async function getData(url) {
     return await fetch(url).then((response) => response.json());
   }
@@ -16,6 +16,7 @@ function logIn(){
       if(name === nameArr[i]){
         if(psw === pswArr[i]){
           log.innerHTML = "Logged in!";
+          localStorage.setItem('logged in', true)
         }
         else {
           log.innerHTML = "Wrong password or name";
@@ -23,4 +24,7 @@ function logIn(){
       }
     }
   });
-}
+} 
+document.getElementById("logout").addEventListener("click", function(){
+  lStorage.clear();
+})

@@ -3,6 +3,13 @@
     let response = ''
     let howManyTurns = 0
     let s = ''
+    let lStorage = window.localStorage
+    if(lStorage["logged in"] === "true"){
+        document.getElementById('needToLogin').hidden=true
+    }
+    else{
+        document.getElementById('needToLogin').hidden=false
+    }
     function checkNum(event){
     
         const inputField = document.getElementById('inputnum')
