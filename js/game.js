@@ -68,5 +68,8 @@ async function getData(url) {
     let leadeboard = document.getElementById("leaderboard")
     for(let i = 0;i<nameArr.length;i++){
       leadeboard.innerHTML += `<tr><td>${nameArr[i]}</td><td>${lStorage.getItem("score"+nameArr[i])}</td></tr>`
+      if(lStorage.getItem("score"+nameArr[i]) === null){
+        lStorage.setItem("score"+nameArr[i], "No score inputed")
+      }
     }
   });
