@@ -57,10 +57,7 @@ getData("https://api.apispreadsheets.com/data/10618/").then((data) => {
         num = i
       }
     }
-
-    console.log(nameArr[num], imageArr[num], lStorage);
     let userimage = document.getElementById('userimage')
     userimage.innerHTML = `<img src="/favourite/${imageArr[num]}" alt="${nameS}" width="32" height="32">`
-    console.log(userimage)
   }
 });

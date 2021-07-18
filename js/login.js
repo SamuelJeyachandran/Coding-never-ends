@@ -19,6 +19,7 @@ function logIn(){
           log.innerHTML = "Logged in!";
           lStorage.setItem('logged in', true)
           lStorage.setItem('name', name)
+          lStorage.setItem('score', 100)
         }
         else {
           log.innerHTML = "Wrong password or name";
