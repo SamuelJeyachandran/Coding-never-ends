@@ -7,7 +7,6 @@ async function getData(url) {
     let response = ''
     let howManyTurns = 0
     let s = ''
-    console.log(num)
     if(lStorage["logged in"] === "true"){
         document.getElementById('needToLogin').hidden=true
     }
@@ -27,7 +26,6 @@ async function getData(url) {
             if (res.status === 201){
               alert("GOOD")          }
             else{
-              console.log(res);
               alert("Please report to Samuel Jey")
             }
           })

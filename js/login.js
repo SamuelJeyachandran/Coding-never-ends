@@ -1,5 +1,4 @@
 const lStorage = window.localStorage;
-console.log(lStorage);
 function logIn(){
   const nameField = document.getElementById('name')
   const name = nameField.value
@@ -46,10 +45,7 @@ getData("https://api.apispreadsheets.com/data/10618/").then((data) => {
         num = i
       }
     }
-
-    console.log(nameArr[num], imageArr[num], lStorage);
     let userimage = document.getElementById('userimage')
     userimage.innerHTML = `<img src="/favourite/${imageArr[num]}" alt="${nameS}" width="32" height="32">`
-    console.log(userimage)
   }
 });
