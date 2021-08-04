@@ -1,18 +1,18 @@
 const lStorage = window.localStorage;
 function SubForm() {
-    const data = $("#myForm").serializeArray();
-    $.ajax({
-      url: "https://api.apispreadsheets.com/data/10618/",
-      type: "post",
-      data: data,
-      success: function () {
-        alert("Your information was submited successfully!!!");
-      },
-      error: function () {
-        alert("There was an error :( Please report this to Samuel Jey");
-      }
-    });
-  }
+  const data = $("#myForm").serializeArray();
+  $.ajax({
+    url: "https://api.apispreadsheets.com/data/10618/",
+    type: "post",
+    data: data,
+    success: function () {
+      alert("Your information was submited successfully!!!");
+    },
+    error: function () {
+      alert("There was an error :( Please report this to Samuel Jey");
+    }
+  });
+}
 async function getData(url) {
   return await fetch(url).then((response) => response.json());
 }
@@ -29,7 +29,6 @@ getData("https://api.apispreadsheets.com/data/10618/").then((data) => {
       }
     }
 
-    console.log(nameArr[num], imageArr[num], lStorage);
     let userimage = document.getElementById('userimage')
     userimage.innerHTML = `<img src="/favourite/${imageArr[num]}" alt="${nameS}" width="32" height="32">`
   }
