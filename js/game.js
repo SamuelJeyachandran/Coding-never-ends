@@ -20,8 +20,6 @@ async function getData(url) {
         let nameS = lStorage.getItem("name")
         let score = arr.filter(item => item.name === nameS)[0].score
         if(score > howManyTurns || score === "No score inputed") {
-          console.log("Yeah!")
-          console.log(howManyTurns)
           fetch("https://api.apispreadsheets.com/data/15972/", {
             method: "POST",
             body: JSON.stringify({"data": {"score": howManyTurns}, "query": `select*from15972wherename='${lStorage.getItem("name")}'`}),
@@ -29,6 +27,7 @@ async function getData(url) {
             if (res.status === 201){
               alert("GOOD")          }
             else{
+              console.log(res);
               alert("Please report to Samuel Jey")
             }
           })
@@ -39,7 +38,6 @@ async function getData(url) {
       const inputField = document.getElementById('inputnum')
       const input = parseInt(inputField.value)
       if(input === num){
-        event.preventDefault()
         response = "Congratulations that's the right number";
         howManyTurns++;
         document.getElementById('form').hidden=true
