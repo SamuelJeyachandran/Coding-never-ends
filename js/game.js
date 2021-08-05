@@ -13,7 +13,7 @@ async function getData(url) {
     else{
         document.getElementById('needToLogin').hidden=false
     }
-    function getScore(){
+    function sendScore(){
       getData("https://api.apispreadsheets.com/data/10618/").then((data) => {
         let arr = data.data
         let nameS = lStorage.getItem("name")
@@ -24,7 +24,8 @@ async function getData(url) {
             body: JSON.stringify({"data": {"score": howManyTurns}, "query": `select*from15972wherename='${lStorage.getItem("name")}'`}),
           }).then(res =>{
             if (res.status === 201){
-              alert("GOOD")          }
+              getUserImageAndLeaderboard()
+            }
             else{
               alert("Please report to Samuel Jey")
             }
@@ -41,7 +42,7 @@ async function getData(url) {
         document.getElementById('form').hidden=true
         document.getElementById('turn').innerHTML = `You have had ${howManyTurns} turn${s}`
         document.getElementById('hButton').hidden=false
-        getScore()
+        sendScore()
       }
       else if(input > num){
         response = "go lower";
@@ -67,6 +68,7 @@ async function getData(url) {
 async function getData(url) {
   return await fetch(url).then((response) => response.json());
 }
+function getUserImageAndLeaderboard() {  
   getData("https://api.apispreadsheets.com/data/10618/").then((data) => {
     let arr = data.data
     let nameS = lStorage["name"]
@@ -83,8 +85,12 @@ async function getData(url) {
       let userimage = document.getElementById('userimage')
       userimage.innerHTML = `<img src="/favourite/${imageArr[num]}" alt="${nameS}" width="32" height="32">`
     }
+    let html = "<tr><th>Name</th><th>Best score</th></tr>"
     let leadeboard = document.getElementById("leaderboard")
     for(let i = 0;i<nameArr.length;i++){
-      leadeboard.innerHTML += `<tr><td>${nameArr[i]}</td><td>${scoreArr[i]}</td></tr>`
+      html += `<tr><td>${nameArr[i]}</td><td>${scoreArr[i]}</td></tr>`
     }
+    leadeboard.innerHTML = html
   });
+}
+getUserImageAndLeaderboard()
