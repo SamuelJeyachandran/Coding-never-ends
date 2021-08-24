@@ -12,7 +12,7 @@ function logIn(){
     let nameArr = arr.map(item => item.name)
     let pswArr = arr.map(item => item.psw)
     let log = document.getElementById("log")
-    for(let i = 0;i<name.length;i++){
+    for(let i = 0;i<nameArr.length;i++){
       if(name === nameArr[i]){
         if(psw === pswArr[i]){
           log.innerHTML = "Logged in!";
