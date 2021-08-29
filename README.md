@@ -1,6 +1,6 @@
-# favourite
+# Coding never ends
 
-This is my aplication where you can Answer some questions and it will add to the webpage then you can view your favourite things by Selecting your name
+This is my website where you can do many things like sign up, log in, send messages, play games and more
 
 
 
