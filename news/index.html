@@ -12,6 +12,10 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
     <style>
       .container {
         margin-left: unset;
@@ -19,7 +23,7 @@
       h1 {
         color: darkgreen;
       }
-      h3 {
+      h5 {
         color: green;
       }
     </style>
@@ -47,10 +51,20 @@
           </div>
       </nav>
       <h1>News</h1>
-      <h3>Press this button to play a game</h3>
-      <a href="/favourite/game/"><button>Game</button></a>
+      <h5>Games:</h5>
+      <p><a href="/favourite/game/">Guesing game</a> And <a href="">Map game (coming soon)</a></p>
+      <h5>Chat system: (coming soon)</h5>
+      <form id="myForm">
+        <label>To:</label>
+        <select name="select" id="selectName">
+        </select>
+        <br>
+        <label>Message:</label>
+        <input type="text" id="message"></input>
+      </form>
+      <button onclick="SubForm()">Send</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="/favourite/js/news.js"></script>
+    <script src="/js/news.js"></script>
   </body>
 </html>
