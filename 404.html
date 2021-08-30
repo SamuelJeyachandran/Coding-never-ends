@@ -4,41 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error | Coding never ends</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>404 error | Coding never ends</title>
+    <link rel="shortcut icon" type="image/jpg" href="/favicon.ico"/>
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+        crossorigin="anonymous"/>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
     <style>
-        body{
-            background-image: url("https://images.unsplash.com/photo-1616235132417-99f443954d2e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80");
-            background-size: cover;
-            font-family: 'Roboto', 'sans-serif';
+        .container {
+            margin-left: unset;
         }
-        main{
-            display: flex;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+
+        h1{
+            color:darkgreen;
         }
-        .header404{
-            font-family: 'Chango', cursive;
-            font-size: 48px;
+        h3 {
+            color:green;
         }
-        .content404{
-            text-align: center;
+        select {
+            color:darkslategray;
+            background-color: lightgray;
         }
     </style>
 </head>
 <body>
-    <main>
-        <h4 class="header404">404</h4>
-        <div class="content-404">
-            Uh-oh! We couldn't find the page you are looking for.
-        </div>
-        <p>
-            <a href="/">Check our home page</a>
-        </p>
-    </main>
-    
-</body>
-</html>
+    <div id="webpage" class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="/favicon.ico" width="30" height="30" class="d-inline-block align-text-top"> Coding never ends</a>
+                </div>
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/news">News</a>
+                    <a class="nav-link" href="/signup">Sign up</a>
+                    <a class="nav-link" href="/login">Log in</a>
+                    <div id="userimage"></div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        <h1>404 Error</h1>
+        <p>No! the page dosen't exist though the error page looks <strong>cool</strong></p>
+    </div>
