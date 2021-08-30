@@ -1,6 +1,6 @@
 const lStorage = window.localStorage;
 function logIn(){
-  const nameField = document.getElementById('name')
+  const nameField = document.getElementById('selectName')
   const name = nameField.value
   const pswField = document.getElementById('psw')
   const psw = pswField.value
@@ -33,6 +33,24 @@ document.getElementById("logout").addEventListener("click", function(){
 async function getData(url) {
   return await fetch(url).then((response) => response.json());
 }
+let info = [];
+(function(){
+  function writeData(favourites) {
+    let options = ['<option value=""></option>'];
+    info = favourites;
+    const select = document.getElementById("selectName");
+    for (let i = 0; i < favourites.length; i++) {
+      options.push(
+        `<option value="${favourites[i]["name"]}">${favourites[i]["name"]}</option>`
+      );
+    }
+  
+    select.innerHTML = options;
+  }
+  getData("https://api.apispreadsheets.com/data/10618/").then((data) =>
+    writeData(data.data)
+  );
+})()
 getData("https://api.apispreadsheets.com/data/10618/").then((data) => {
   if(lStorage["logged in"] === "true"){
     let arr = data.data
