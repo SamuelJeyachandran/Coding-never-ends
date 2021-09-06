@@ -1,6 +1,14 @@
 const lStorage = window.localStorage;
-function SubForm() {
+function SubForm(event) {
   const data = $("#myForm").serializeArray();
+  let value = data.map(item => item.value)
+  if(value[0] === ""){
+    return ;
+  }
+  if(value[6] === ""){
+    return ;
+  }
+  event.preventDefault()
   $.ajax({
     url: "https://api.apispreadsheets.com/data/10618/",
     type: "post",
@@ -12,6 +20,7 @@ function SubForm() {
       alert("There was an error :( Please report this to Samuel Jey");
     }
   });
+  document.getElementById('myForm').reset();
 }
 async function getData(url) {
   return await fetch(url).then((response) => response.json());
