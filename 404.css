@@ -11,16 +11,22 @@ h1{
 h3 {
     color:green;
 }
-#robot {
+#box {
     width: 500px;
     height: 300px;
-    border: 1px solid #8d8d8d;
+    border: 1px solid #cfcfcf;
+}
+#robot {
+    top: 10px;
+    left: -150px;
+    position: relative;
+    animation: moveRobot 1s;
 }
 #robotFace {
     height: 60px;
     width: 60px;
     top: -310px;
-    left: 208px;
+    left: 209px;
     position: relative;
     background-color: lightgrey;
     border: 1px solid grey;
@@ -37,14 +43,11 @@ h3 {
 #robotLeftArm {
     height: 90px;
     width: 30px;
-    top: -100px;
+    top: -20px;
     left: 270px;
-    z-index: 10;
     position: relative;
     background-color: lightgrey;
     border: 1px solid grey;
-    transform-origin: 50% 100%;
-    animation: robotWaving 1s infinite linear;
 }
 #robotRightArm {
     height: 90px;
@@ -74,20 +77,20 @@ h3 {
     background-color: lightgrey;
     border: 1px solid grey;
 }
-#leftEye {
+#rightEye {
     height: 12px;
     width: 12px;
-    top: 12px;
+    top: -7px;
     left: 5px;
     border-radius: 50%;
     position: relative;
     background-color: black;
     border: 1px solid grey;
 }
-#rightEye {
+#leftEye {
     height: 12px;
     width: 12px;
-    top: 0px;
+    top: 5px;
     left: 45px;
     border-radius: 50%;
     position: relative;
@@ -97,23 +100,16 @@ h3 {
 #mouth {
     position: absolute;
     z-index: 1;
-    top: 20px;
+    top: 30px;
     left: 0;
     right: 0;
     height: 25px;
     width: 30px;
     margin: 0 auto;
-    border-bottom: 8px solid #222;
+    border-top: 8px solid #222;
     border-radius: 100%;
 }
-@keyframes robotWaving{
-    0% {
-        transform: rotate(30grad);
-    }
-    50% {
-        transform: rotate(-30grad);
-    }
-    100% {
-        transform: rotate(30grad);
-    }
+@keyframes moveRobot{
+    from {left: 0px;}
+    to {left: 50;}
 }
