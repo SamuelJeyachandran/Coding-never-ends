@@ -1,115 +1,119 @@
 .container {
-    margin-left: unset;
+  margin-left: unset;
 }
 * {
-    padding: 0;
-    margin: 22;
+  padding: 0;
+  margin: 22;
 }
-h1{
-    color:darkgreen;
+h1 {
+  color: darkgreen;
 }
 h3 {
-    color:green;
+  color: green;
 }
 #box {
-    width: 500px;
-    height: 300px;
-    border: 1px solid #cfcfcf;
+  width: 500px;
+  height: 300px;
+  border: 1px solid #cfcfcf;
 }
 #robot {
-    top: 10px;
-    left: -150px;
-    position: relative;
-    animation: moveRobot 1s;
+  top: 10px;
+  left: -150px;
+  position: relative;
+  animation: moveRobot 1s;
 }
 #robotFace {
-    height: 60px;
-    width: 60px;
-    top: -310px;
-    left: 209px;
-    position: relative;
-    background-color: lightgrey;
-    border: 1px solid grey;
+  height: 60px;
+  width: 60px;
+  top: -310px;
+  left: 209px;
+  position: relative;
+  background-color: lightgrey;
+  border: 1px solid grey;
 }
 #robotBody {
-    height: 130px;
-    width: 80px;
-    top: 110px;
-    left: 200px;
-    position: relative;
-    background-color: lightgrey;
-    border: 1px solid grey;
+  height: 130px;
+  width: 80px;
+  top: 110px;
+  left: 200px;
+  position: relative;
+  background-color: lightgrey;
+  border: 1px solid grey;
 }
 #robotLeftArm {
-    height: 90px;
-    width: 30px;
-    top: -20px;
-    left: 270px;
-    position: relative;
-    background-color: lightgrey;
-    border: 1px solid grey;
+  height: 90px;
+  width: 30px;
+  top: -20px;
+  left: 270px;
+  position: relative;
+  background-color: lightgrey;
+  border: 1px solid grey;
 }
 #robotRightArm {
-    height: 90px;
-    width: 30px;
-    top: -110px;
-    left: 180px;
-    position: relative;
-    background-color: lightgrey;
-    border: 1px solid grey;
+  height: 90px;
+  width: 30px;
+  top: -110px;
+  left: 180px;
+  position: relative;
+  background-color: lightgrey;
+  border: 1px solid grey;
 }
 #robotLeg {
-    height: 30px;
-    width: 5px;
-    top: -70px;
-    left: 237px;
-    position: relative;
-    background-color: lightgrey;
-    border: 1px solid grey;
+  height: 30px;
+  width: 5px;
+  top: -70px;
+  left: 237px;
+  position: relative;
+  background-color: lightgrey;
+  border: 1px solid grey;
 }
 #robotWheel {
-    height: 20px;
-    width: 20px;
-    top: -70px;
-    left: 230px;
-    border-radius: 50%;
-    position: relative;
-    background-color: lightgrey;
-    border: 1px solid grey;
+  height: 20px;
+  width: 20px;
+  top: -70px;
+  left: 230px;
+  border-radius: 50%;
+  position: relative;
+  background-color: lightgrey;
+  border: 1px solid grey;
 }
 #rightEye {
-    height: 12px;
-    width: 12px;
-    top: -7px;
-    left: 5px;
-    border-radius: 50%;
-    position: relative;
-    background-color: black;
-    border: 1px solid grey;
+  height: 12px;
+  width: 12px;
+  top: -7px;
+  left: 5px;
+  border-radius: 50%;
+  position: relative;
+  background-color: black;
+  border: 1px solid grey;
 }
 #leftEye {
-    height: 12px;
-    width: 12px;
-    top: 5px;
-    left: 45px;
-    border-radius: 50%;
-    position: relative;
-    background-color: black;
-    border: 1px solid grey;
+  height: 12px;
+  width: 12px;
+  top: 5px;
+  left: 45px;
+  border-radius: 50%;
+  position: relative;
+  background-color: black;
+  border: 1px solid grey;
 }
 #mouth {
-    position: absolute;
-    z-index: 1;
-    top: 30px;
-    left: 0;
-    right: 0;
-    height: 25px;
-    width: 30px;
-    margin: 0 auto;
-    border-top: 8px solid #222;
-    border-radius: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  left: 0;
+  right: 0;
+  height: 25px;
+  width: 30px;
+  margin: 0 auto;
+  border-top: 8px solid #222;
+  border-radius: 100%;
 }
-@keyframes moveRobot{
-    from {left: 0px;}
-    to {left: 50;}
+@keyframes moveRobot {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 50;
+  }
 }
