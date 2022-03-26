@@ -7,7 +7,7 @@ function logIn() {
   async function getData(url) {
     return await fetch(url).then((response) => response.json());
   }
-  getData("https://api.apispreadsheets.com/data/LgZydhhv8NU1M1sR/").then(
+  getData("https://api.apispreadsheets.com/data/Bk27ZkG3ivue8VMp/").then(
     (data) => {
       let arr = data.data;
       let nameArr = arr.map((item) => item.name);
@@ -48,11 +48,11 @@ let info = [];
 
     select.innerHTML = options;
   }
-  getData("https://api.apispreadsheets.com/data/LgZydhhv8NU1M1sR/").then(
+  getData("https://api.apispreadsheets.com/data/Bk27ZkG3ivue8VMp/").then(
     (data) => writeData(data.data)
   );
 })();
-getData("https://api.apispreadsheets.com/data/LgZydhhv8NU1M1sR/").then(
+getData("https://api.apispreadsheets.com/data/Bk27ZkG3ivue8VMp/").then(
   (data) => {
     if (lStorage["logged in"] === "true") {
       let arr = data.data;
