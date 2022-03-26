@@ -26,6 +26,9 @@
       h5 {
         color: green;
       }
+      table, th, td {
+        border:1px solid black;
+      }
     </style>
   </head>
   <body>
@@ -51,9 +54,9 @@
           </div>
       </nav>
       <h1>News</h1>
-      <h5>Games:</h5>
-      <p><a href="/game/">Guesing game</a> And <a href="">Map game (coming soon)</a></p>
-      <h5>Chat system: (coming soon)</h5>
+      <h5>Games</h5>
+      <p><a href="/guessing-game/">Guesing game</a> And <a href="">Map game (coming soon)</a></p>
+      <h5>Chat system</h5>
       <form id="myForm">
         <label>To:</label>
         <select name="select" id="selectName">
@@ -64,6 +67,16 @@
         <input type="text" id="message"></input>
       </form>
       <button onclick="SubForm()">Send</button>
+      <!-- <br>
+      <br>
+      <h5>Messages</h5>
+      <table>
+        <tr>
+          <th>From</th>
+          <th>Message</th>
+        </tr>
+        <div></div>
+      </table> -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="/js/news.js"></script>
