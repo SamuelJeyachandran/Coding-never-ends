@@ -13,5 +13,19 @@ function activate(id) {
   buttonB.hidden = true;
   buttonC.hidden = true;
   const text = document.getElementById("text" + id);
+  const text2 = document.getElementById("text2" + id);
   text.hidden = false;
+  text2.hidden = false;
+}
+function replay() {
+  buttonA.hidden = true;
+  buttonB.hidden = true;
+  buttonC.hidden = true;
+  start.hidden = false;
+  textA.hidden = true;
+  textB.hidden = true;
+  textC.hidden = true;
+  text2A.hidden = true;
+  text2B.hidden = true;
+  text2C.hidden = true;
 }

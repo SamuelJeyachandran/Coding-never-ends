@@ -66,12 +66,19 @@
       </nav>
       <h1>You Choose</h1>
       <h3>Choose any option you want</h3>
-      <button onclick="startYouChoose()" id="start">Start</button><br /><br />
-      <p hidden="true" id="textA">Passageway A</p>
-      <p hidden="true" id="textB">Passageway B</p>
-      <p hidden="true" id="textC">Passageway C</p>
+      <hr style="color: darkgreen; border-width: 0; height: 4px; opacity: 1" />
+
+      <button onclick="startYouChoose()" id="start">Start</button>
+      <h4 style="color: red" hidden="true" id="textA">Passageway A</h4>
+      <p style="color: red" hidden="true" id="text2A">Unlucky</p>
+      <h4 style="color: blue" hidden="true" id="textB">Passageway B</h4>
+      <p style="color: blue" hidden="true" id="text2B"
+        >You are lucky, you got a dinosaur tooth fossil</p
+      >
+      <h4 style="color: purple" hidden="true" id="textC">Passageway C</h4>
+      <p style="color: purple" hidden="true" id="text2C">Unlucky</p>
       <div>
-        <p style="text-align: center"
+        <p
           ><a
             onclick="activate('A')"
             id="buttonA"
@@ -82,7 +89,7 @@
           >
         </p>
       </div>
-      <p style="text-align: center"
+      <p
         ><a
           onclick="activate('B')"
           id="buttonB"
@@ -92,15 +99,22 @@
           >Passageway B</a
         ></p
       >
-      <p style="text-align: center"
+      <p
         ><a
           onclick="activate('C')"
           id="buttonC"
           hidden="hidden"
           class="btn-large btn-info btn"
-          style="width: 20.5%; background: green; color: white"
+          style="width: 20.5%; background: purple; color: white"
           >Passageway C</a
-        ><br />
+        ><br /> </p
+      ><p
+        ><a
+          onclick="replay()"
+          class="btn-large btn-info btn"
+          style="width: 20.5%"
+          >Play Again</a
+        >
       </p>
     </div>
 
