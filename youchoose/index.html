@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You Choose | Coding never ends</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <style>
+      .container {
+        margin-left: unset;
+      }
+      #canvas {
+        border: 1px solid #000000;
+      }
+      h1 {
+        color: darkgreen;
+      }
+      h3 {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="/favicon.ico"
+              width="30"
+              height="30"
+              class="d-inline-block align-text-top"
+              href="/"
+            />
+            Coding never ends</a
+          >
+        </div>
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/news">News</a>
+              <a class="nav-link" href="/signup">Sign up</a>
+              <a class="nav-link" href="/login">Log in</a>
+              <div id="userimage"></div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <h1>You Choose</h1>
+      <h3>Choose any option you want</h3>
+      <button onclick="startYouChoose()" id="start">Start</button><br /><br />
+      <p hidden="true" id="textA">Passageway A</p>
+      <p hidden="true" id="textB">Passageway B</p>
+      <p hidden="true" id="textC">Passageway C</p>
+      <div>
+        <p style="text-align: center"
+          ><a
+            onclick="activate('A')"
+            id="buttonA"
+            hidden="hidden"
+            class="btn-large btn-info btn"
+            style="width: 20%; background: red; color: white"
+            >Passageway A</a
+          >
+        </p>
+      </div>
+      <p style="text-align: center"
+        ><a
+          onclick="activate('B')"
+          id="buttonB"
+          hidden="hidden"
+          class="btn-large btn-info btn"
+          style="width: 20%; background: blue; color: white"
+          >Passageway B</a
+        ></p
+      >
+      <p style="text-align: center"
+        ><a
+          onclick="activate('C')"
+          id="buttonC"
+          hidden="hidden"
+          class="btn-large btn-info btn"
+          style="width: 20.5%; background: green; color: white"
+          >Passageway C</a
+        ><br />
+      </p>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/youchoose.js"></script>
+  </body>
+</html>
