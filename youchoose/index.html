@@ -73,49 +73,47 @@
       <p style="color: red" hidden="true" id="text2A">Unlucky</p>
       <h4 style="color: blue" hidden="true" id="textB">Passageway B</h4>
       <p style="color: blue" hidden="true" id="text2B"
-        >You are lucky, you got a dinosaur tooth fossil</p
-      >
+        >You are lucky, you got a Coding Never Ends voucher $_$
+      </p>
       <h4 style="color: purple" hidden="true" id="textC">Passageway C</h4>
       <p style="color: purple" hidden="true" id="text2C">Unlucky</p>
-      <div>
-        <p
-          ><a
-            onclick="activate('A')"
-            id="buttonA"
-            hidden="hidden"
-            class="btn-large btn-info btn"
-            style="width: 20%; background: red; color: white"
-            >Passageway A</a
-          >
-        </p>
-      </div>
-      <p
-        ><a
+      <div hidden="true" id="passageway1">
+        <button
+          onclick="activate('A')"
+          class="btn-large btn-info btn"
+          style="width: 20%; background: red; color: white"
+          >Passageway A</button
+        ><br />
+
+        <button
           onclick="activate('B')"
-          id="buttonB"
-          hidden="hidden"
           class="btn-large btn-info btn"
           style="width: 20%; background: blue; color: white"
-          >Passageway B</a
-        ></p
-      >
-      <p
-        ><a
+          >Passageway B</button
+        ><br />
+        <button
           onclick="activate('C')"
-          id="buttonC"
-          hidden="hidden"
           class="btn-large btn-info btn"
-          style="width: 20.5%; background: purple; color: white"
-          >Passageway C</a
-        ><br /> </p
-      ><p
-        ><a
-          onclick="replay()"
-          class="btn-large btn-info btn"
-          style="width: 20.5%"
-          >Play Again</a
-        >
-      </p>
+          style="width: 20%; background: purple; color: white"
+          >Passageway C</button
+        ><br /><br />
+      </div>
+      <button
+        hidden="true"
+        id="back"
+        onclick="back()"
+        class="btn-large btn-info btn"
+        style="width: 20%"
+        >Back</button
+      >
+      <button
+        hidden="true"
+        id="again"
+        onclick="replay()"
+        class="btn-large btn-info btn"
+        style="width: 20%"
+        >Play Again</button
+      >
     </div>
 
     <script
