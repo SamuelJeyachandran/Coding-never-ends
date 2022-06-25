@@ -2,6 +2,7 @@ const start = document.getElementById("start");
 const passageway1 = document.getElementById("passageway1");
 const again = document.getElementById("again");
 const hback = document.getElementById("back");
+const br = document.getElementById("br");
 
 function startYouChoose() {
   start.hidden = true;
@@ -15,6 +16,7 @@ function activate(id) {
   const text2 = document.getElementById("text2" + id);
   text.hidden = false;
   text2.hidden = false;
+  br.hidden = false;
 }
 function replay() {
   passageway1.hidden = true;
@@ -27,6 +29,7 @@ function replay() {
   text2C.hidden = true;
   again.hidden = true;
   hback.hidden = true;
+  br.hidden = true;
 }
 function back() {
   if (passageway1.hidden === true) {
@@ -37,6 +40,7 @@ function back() {
     text2A.hidden = true;
     text2B.hidden = true;
     text2C.hidden = true;
+    br.hidden = true;
     return;
   }
   if ((start.hidden = true)) {
