@@ -28,9 +28,6 @@ function logIn() {
     }
   );
 }
-document.getElementById("logout").addEventListener("click", function () {
-  lStorage.clear();
-});
 async function getData(url) {
   return await fetch(url).then((response) => response.json());
 }
@@ -52,21 +49,32 @@ let info = [];
     (data) => writeData(data.data)
   );
 })();
+document.getElementById("logout").addEventListener("click", function () {
+  lStorage.clear();
+  logout.hidden = true;
+  username.innerHTML = `<p><-- Go Here to Log In ^_^</p>`;
+});
 getData("https://api.apispreadsheets.com/data/Bk27ZkG3ivue8VMp/").then(
   (data) => {
+    let username = document.getElementById("username");
     if (lStorage["logged in"] === "true") {
       let arr = data.data;
       let nameS = lStorage["name"];
       let nameArr = arr.map((item) => item.name);
-      let imageArr = arr.map((item) => item.image);
       let num = 2;
       for (let i = 0; i < nameArr.length; i++) {
         if (nameArr[i] === nameS) {
           num = i;
         }
       }
-      let userimage = document.getElementById("userimage");
-      userimage.innerHTML = `<p>You are logged in as <strong>${nameS}</strong></p>`;
+      if (username) {
+        logout.hidden = false;
+        username.innerHTML = `<p>You are logged in as <strong>${nameS}</strong></p>`;
+      }
+    } else {
+      if (username) {
+        username.innerHTML = `<p><-- Go Here to Log In ^_^</p>`;
+      }
     }
   }
 );

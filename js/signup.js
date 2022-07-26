@@ -22,11 +22,17 @@ function SubForm(event) {
   });
   document.getElementById("myForm").reset();
 }
+document.getElementById("logout").addEventListener("click", function () {
+  lStorage.clear();
+  logout.hidden = true;
+  username.innerHTML = `<p><-- Go Here to Log In ^_^</p>`;
+});
 async function getData(url) {
   return await fetch(url).then((response) => response.json());
 }
-getData("https://api.apispreadsheets.com/data/AJ9W5TR91dnEOgQ5/").then(
+getData("https://api.apispreadsheets.com/data/Bk27ZkG3ivue8VMp/").then(
   (data) => {
+    let username = document.getElementById("username");
     if (lStorage["logged in"] === "true") {
       let arr = data.data;
       let nameS = lStorage["name"];
@@ -37,9 +43,14 @@ getData("https://api.apispreadsheets.com/data/AJ9W5TR91dnEOgQ5/").then(
           num = i;
         }
       }
-
-      let userimage = document.getElementById("userimage");
-      userimage.innerHTML = `<p>You are logged in as <strong>${nameS}</strong></p>`;
+      if (username) {
+        logout.hidden = false;
+        username.innerHTML = `<p>You are logged in as <strong>${nameS}</strong></p>`;
+      }
+    } else {
+      if (username) {
+        username.innerHTML = `<p><-- Go Here to Log In ^_^</p>`;
+      }
     }
   }
 );

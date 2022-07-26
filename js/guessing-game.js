@@ -69,31 +69,33 @@ async function getData(url) {
 async function getData(url) {
   return await fetch(url).then((response) => response.json());
 }
-function getUserNameAndLeaderboard() {
-  getData("https://api.apispreadsheets.com/data/dWkhejvhEHxMiDPC/").then(
-    (data) => {
-      let arr = data.data;
-      let nameS = lStorage["name"];
-      let nameArr = arr.map((item) => item.name);
-      let scoreArr = arr.map((item) => item.score);
-      if (lStorage["logged in"] === "true") {
-        let num = 2;
-        for (let n = 0; n < nameArr.length; n++) {
-          if (nameArr[n] === nameS) {
-            num = n;
-          }
-        }
-        let username = document.getElementById("username");
+getData("https://api.apispreadsheets.com/data/dWkhejvhEHxMiDPC/").then(
+  (data) => {
+    const arr = data.data;
+    const nameArr = arr.map((item) => item.name);
+    const scoreArr = arr.map((item) => item.score);
+    let html = `<tr><th>Username</th><th>Best score</th></tr>`;
+    const leadeboard = document.getElementById("leaderboard");
+    for (let i = 0; i < nameArr.length; i++) {
+      html += `<tr><td>${nameArr[i]}</td><td>${scoreArr[i]}</td></tr>`;
+    }
+    leadeboard.innerHTML = html;
+  }
+);
+getData("https://api.apispreadsheets.com/data/Bk27ZkG3ivue8VMp/").then(
+  (data) => {
+    let username = document.getElementById("username");
+    if (lStorage["logged in"] === "true") {
+      const arr = data.data;
+      const nameS = lStorage["name"];
+      if (username) {
+        logout.hidden = false;
         username.innerHTML = `<p>You are logged in as <strong>${nameS}</strong></p>`;
-
-        let html = `<tr><th>Username</th><th>Best score</th></tr>`;
-        let leadeboard = document.getElementById("leaderboard");
-        for (let i = 0; i < nameArr.length; i++) {
-          html += `<tr><td>${nameArr[i]}</td><td>${scoreArr[i]}</td></tr>`;
-        }
-        leadeboard.innerHTML = html;
+      }
+    } else {
+      if (username) {
+        username.innerHTML = `<p><-- Go Here to Log In ^_^</p>`;
       }
     }
-  );
-}
-getUserNameAndLeaderboard();
+  }
+);

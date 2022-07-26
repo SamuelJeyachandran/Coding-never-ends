@@ -37,33 +37,75 @@
       label {
         color:dimgray;
       }
+      button {
+        max-height: 30px;
+      }
+      .loader {
+        width: 48px;
+        height: 48px;
+        border: 5px solid darkgreen;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="/favicon.ico" width="30" height="30" class="d-inline-block align-text-top" href="/"> Coding never ends</a>
-      </div>
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" style="margin-right: 180px" href="#">
+          <img
+            src="/favicon.ico"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+            href="/"
+          />
+          Coding never ends</a
+        >
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
               <a class="nav-link" href="/">Home</a>
               <a class="nav-link" href="/news">News</a>
+              <a class="nav-link" href="/guessing-game/">Guesing Game</a>
+              <a class="nav-link" href="/youchoose/">You Choose</a>
               <a class="nav-link active" aria-current="page" href="/signup">Sign up</a>
               <a class="nav-link" href="/login">Log in</a>
-              <div id="userimage"></div>
+              <div id="username">
+                <p>Loading</p>
+                <span class="loader"></span>
+              </div>
+              &nbsp;&nbsp;&nbsp;
+              <button hidden="true" id="logout">Log out</button>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     <h1>Sign up</h1>
     <h3>Sign up by putting your Name and Password</h3>
-    <h5>(Don't put you real Password because someone could hack you)</h5>
+    <h5>(Put a Fake Password)</h5>
     <br>
     <div>
     <form id="myForm">

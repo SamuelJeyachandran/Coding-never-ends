@@ -33,30 +33,56 @@
         #log {
             color:green;
         }
+        button {
+          max-height: 30px;
+        }
+        .loader {
+        width: 40px;
+        height: 40px;
+        border: 5px solid darkgreen;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                <img src="/favicon.ico" width="30" height="30" class="d-inline-block align-text-top" href="/"> Coding never ends</a>
-            </div>
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="/">Home</a>
-                        <a class="nav-link" href="/news">News</a>
-                        <a class="nav-link" href="/signup">Sign up</a>
-                        <a class="nav-link active" aria-current="page" href="/login">Log in</a>
-                        <div id="userimage"></div>
+          <a class="navbar-brand" style="margin-right: 180px;" href="#">
+            <img src="/favicon.ico" width="30" height="30" class="d-inline-block align-text-top" href="/"> Coding never ends</a>
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav"> 
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/news">News</a>
+                    <a class="nav-link" href="/guessing-game/">Guesing Game</a>
+                    <a class="nav-link" href="/youchoose/">You Choose</a>
+                    <a class="nav-link" href="/signup">Sign up</a>
+                    <a class="nav-link active" aria-current="page" href="/login">Log in</a>
+                    <div id="username">
+                        <p>Loading</p>
+                        <span class="loader"></span>
                     </div>
-                </div>
-            </div>
-        </nav>
+                    &nbsp;&nbsp;&nbsp;
+                    <button hidden id="logout">Log out</button>
+                  </div>
+              </div>
+          </div>
+      </nav>
         <h1>Log in</h1>
         <h3>To log in please fill this form</h3>
         <form id="login">
@@ -73,8 +99,6 @@
         <br>
         <br>
         <p id="log"></p>
-        <br>
-        <button id="logout">log out</button>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="/js/login.js"></script>
     </div>

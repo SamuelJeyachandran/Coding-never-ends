@@ -29,30 +29,56 @@
       table, th, td {
         border:1px solid black;
       }
+      button {
+          max-height: 30px;
+      }
+      .loader {
+        width: 40px;
+        height: 40px;
+        border: 5px solid darkgreen;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+        transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" style="margin-right: 180px;" href="#">
+          <img src="/favicon.ico" width="30" height="30" class="d-inline-block align-text-top" href="/"> Coding never ends</a>
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="/favicon.ico" width="30" height="30" class="d-inline-block align-text-top" href="/"> Coding never ends</a>
-        </div>
-          <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
-                    <a class="nav-link" href="/">Home</a>
-                    <a class="nav-link active" aria-current="page" href="/news">News</a>
-                    <a class="nav-link" href="/signup">Sign up</a>
-                    <a class="nav-link" href="/login">Log in</a>
-                    <div id="userimage"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav"> 
+                  <a class="nav-link" href="/">Home</a>
+                  <a class="nav-link active" aria-current="page" href="/news">News</a>
+                  <a class="nav-link" href="/guessing-game/">Guesing Game</a>
+                  <a class="nav-link" href="/youchoose/">You Choose</a>
+                  <a class="nav-link" href="/signup">Sign up</a>
+                  <a class="nav-link" href="/login">Log in</a>
+                  <div id="username">
+                      <p>Loading</p>
+                      <span class="loader"></span>
                   </div>
-              </div>
-          </div>
-      </nav>
+                  &nbsp;&nbsp;&nbsp;
+                  <button hidden id="logout">Log out</button>
+                </div>
+            </div>
+        </div>
+    </nav>
       <h1>News</h1>
       <h5>Games</h5>
       <p><a href="/guessing-game/">Guesing game</a> And <a href="/youchoose/">You Choose</a></p>

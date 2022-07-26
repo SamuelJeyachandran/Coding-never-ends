@@ -1,0 +1,23 @@
+{
+  "name": "sam",
+  "version": "1.0.0",
+  "description": "This is my website where you can do many things like sign up, log in, send messages, play games and more",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelJeyachandran/favourite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamuelJeyachandran/favourite/issues"
+  },
+  "homepage": "https://github.com/SamuelJeyachandran/favourite#readme",
+  "devDependencies": {
+    "cypress": "^10.3.0"
+  }
+}
