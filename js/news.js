@@ -27,18 +27,6 @@ async function getData(url) {
 }
 let info = [];
 (function () {
-  function writeData(favourites) {
-    let options = ['<option value=""></option>'];
-    info = favourites;
-    const select = document.getElementById("selectName");
-    for (let i = 0; i < favourites.length; i++) {
-      options.push(
-        `<option value="${favourites[i]["name"]}">${favourites[i]["name"]}</option>`
-      );
-    }
-
-    select.innerHTML = options;
-  }
   async function getData(url) {
     return await fetch(url).then((response) => response.json());
   }
@@ -56,6 +44,12 @@ let info = [];
         let nameS = lStorage["name"];
         let nameArr = arr.map((item) => item.name);
         let num = 2;
+        let options = ['<option value=""></option>'];
+        const select = document.getElementById("selectName");
+        for (let i = 0; i < nameArr.length; i++) {
+          options.push(`<option value="${nameArr[i]}">${nameArr[i]}</option>`);
+        }
+        select.innerHTML = options;
         for (let i = 0; i < nameArr.length; i++) {
           if (nameArr[i] === nameS) {
             num = i;
