@@ -62,7 +62,9 @@ async function getData(url) {
     document.getElementById("answer").innerHTML = response;
     s = "s";
   }
-
+function replay(){
+  document.getElementById("form").hidden = false;
+}
   const form = document.getElementById("form");
   form.addEventListener("submit", checkNum);
 })();
