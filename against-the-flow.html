@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Against the Flow | Coding never ends</title>
+    <link rel="shortcut icon" type="image/jpg" href="/favicon.ico"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <style>
+      h1 {
+        color: darkgreen;
+      }
+      h3 {
+        color: green;
+      }
+      h5 {
+        color: green;
+      }
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      button {
+        max-height: 30px;
+      }
+      .loader {
+        width: 48px;
+        height: 48px;
+        border: 5px solid darkgreen;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+        transform: rotate(360deg);
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" style="margin-right: 180px;" href="#">
+          <img src="/favicon.ico" width="30" height="30" class="d-inline-block align-text-top" href="/"> Coding never ends</a>
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav"> 
+                  <a class="nav-link" href="/">Home</a>
+                  <a class="nav-link" href="/news">News</a>
+                  <a class="nav-link" href="/guessing-game/">Guesing Game</a>
+                  <a class="nav-link" href="/youchoose/">You Choose</a>
+                  <a class="nav-link" href="/signup">Sign up</a>
+                  <a class="nav-link" href="/login">Log in</a>
+                  <a class="nav-link active" aria-current="page" href="/against-the-flow/">Against the Flow</a>
+                  <div id="username">
+                      <p>Loading</p>
+                      <span class="loader"></span>
+                  </div>
+                  &nbsp;&nbsp;&nbsp;
+                  <button hidden="true" id="logout">Log out</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+      <h1>Against the Flow!</h1>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.nets/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> -->
+    <script src="/js/against-the-flow.js"></script>
+</body>
+</html>
